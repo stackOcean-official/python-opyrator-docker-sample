@@ -16,3 +16,14 @@ textColor = '#bae5ec'
 # Accepted values (serif | sans serif | monospace) 
 # Default: "sans serif"
 font = "sans serif"
+
+[server]
+
+# The port where the server will listen for browser connections.
+# Default: 8501
+port = 8501
+
+[browser]
+
+# Disables sending usage statistics to Streamlit.
+gatherUsageStats = false

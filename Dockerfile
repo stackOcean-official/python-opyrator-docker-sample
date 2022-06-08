@@ -1,19 +1,18 @@
-FROM continuumio/miniconda3
+FROM python:3.9-bullseye
 
 WORKDIR /app
 
-RUN mkdir -p src
-RUN mkdir -p data
-RUN mkdir -p output
-
 # Create the environment:
-COPY environment.yml .
-RUN conda env create -f environment.yml
+COPY requirements.txt .
 
-# Make RUN commands use the new environment:
-SHELL ["conda", "run", "-n", "python-sample", "/bin/bash", "-c"]
+RUN python3 -m venv /opt/venv
 
-# The code to run when container is started:
-ADD python/src /app/src
+RUN /opt/venv/bin/pip install -r requirements.txt
 
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "python-sample", "python", "src/predict.py"]
+# Copy the code & model repositories
+ADD src src
+ADD model model
+
+EXPOSE 8501
+
+ENTRYPOINT ["/opt/venv/bin/python", "-m", "streamlit", "run", "src/streamlit.py"]

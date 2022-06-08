@@ -27,3 +27,27 @@ pip install -r requirements.txt
 ```
 python3 -m streamlit run src/streamlit.py
 ```
+
+## How to build & run the Docker Image
+
+```
+docker build -t python-docker-sample .
+```
+
+Run the Docker Image with:
+
+```
+docker run -d --rm -p 8501:8501 --name python-docker-sample python-docker-sample
+```
+
+To view the logs of the container run:
+
+```
+docker logs python-docker-sample
+```
+
+To stop the container run:
+
+```
+docker stop python-docker-sample
+```

@@ -44,7 +44,7 @@ Run the Docker Image with:
 docker run -d --rm -p 8501:8501 --name python-docker-sample python-docker-sample
 ```
 
-You can now access the streamlit server at (http://localhost:8501)[http://localhost:8501]
+You can now access the streamlit server at [http://localhost:8501](http://localhost:8501)
 
 <br/>
 

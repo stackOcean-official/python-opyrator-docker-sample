@@ -1,6 +1,6 @@
-# python-opyrator-docker-sample
+# python-streamlit-docker-sample
 
-Sample Deployment of a Python Machine-Learning Model using Docker
+Sample Deployment of a Python Machine-Learning Model with Streamlit UI using Docker
 
 ---
 

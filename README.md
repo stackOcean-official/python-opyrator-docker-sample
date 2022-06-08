@@ -25,5 +25,5 @@ pip install -r requirements.txt
 ## Run the streamlit app
 
 ```
-python3 -m streamlit run src/predict.py
+python3 -m streamlit run src/streamlit.py
 ```

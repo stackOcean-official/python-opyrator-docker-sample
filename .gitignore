@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Model
-/model/model.sav
+# /model/model.sav

@@ -21,7 +21,5 @@ day_of_week = day_lookup[day]
 
 chairs = linear_model.predict(np.array([day_of_week, temp, sun_min, wind]).reshape(1, -1))
 
-st.markdown(f"""
-### Predicted number of chairs needed:
-# {int(chairs[0])}
-""")
+st.subheader('Predicted number of chairs needed:')
+st.header(int(chairs[0]))

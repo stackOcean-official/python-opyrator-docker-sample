@@ -14,8 +14,16 @@ python3 -m venv .venv
 
 Activate new environment:
 
+For Mac/Linux:
+
 ```
 source .venv/bin/activate
+```
+
+For Windows:
+
+```
+source .venv/Scripts/activate
 ```
 
 Install packages:

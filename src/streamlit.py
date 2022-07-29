@@ -19,13 +19,16 @@ day = st.select_slider("Day of week", ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
 
 day_of_week = day_lookup[day]
 
-chairs = linear_model.predict(np.array([day_of_week, temp, sun_min, wind]).reshape(1, -1))
+chairs_prediction = int(linear_model.predict(np.array([day_of_week, temp, sun_min, wind]).reshape(1, -1))[0])
+
+# use max function to avoid negative number of beach chairs
+chairs = max([chairs_prediction, 0])
 
 st.subheader('Predicted number of chairs needed:')
-st.header(int(chairs[0]))
+st.header(chairs)
 
 # remove streamlit menu for production
-hide_streamlit_style = """
+hide_streamlit_style = """ 
 <style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}

@@ -23,3 +23,13 @@ chairs = linear_model.predict(np.array([day_of_week, temp, sun_min, wind]).resha
 
 st.subheader('Predicted number of chairs needed:')
 st.header(int(chairs[0]))
+
+# remove streamlit menu for production
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
